@@ -3,8 +3,11 @@ const cors = require('cors');
 const cookiesParser = require('cookie-parser');
 require('dotenv').config();
 const passport = require('passport');
+const connectDB = require('./db');
 
 const app = express();
+
+connectDB();
 
 app.use(cors({
     origin: process.env.UI_URL,
