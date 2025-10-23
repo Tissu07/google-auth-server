@@ -9,6 +9,8 @@ const app = express();
 
 connectDB();
 
+require('./config/passport')
+
 app.use(cors({
     origin: process.env.UI_URL,
     credentials: true
@@ -18,6 +20,9 @@ app.use(passport.initialize())
 
 app.use(cookiesParser());
 app.use(express.json());
+
+//route
+app.use('/auth', authRoute)
 
 const PORT = process.env.PORT || 5000;
 
