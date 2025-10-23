@@ -31,3 +31,5 @@ router.post('/logout', async (req, res) => {
     }
     res.status(201).json({ message: 'logout successfully' })
 })
+
+module.exports = router
